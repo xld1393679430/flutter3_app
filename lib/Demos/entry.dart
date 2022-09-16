@@ -4,6 +4,7 @@ import 'package:flutter3_app/Demos/Demos/Demo02.dart';
 import 'package:flutter3_app/Demos/Demos/Demo03.dart';
 import 'package:flutter3_app/Demos/Demos/Demo04.dart';
 import 'package:flutter3_app/Demos/Demos/Demo05.dart';
+import 'package:flutter3_app/Demos/Demos/Demo06.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -69,6 +70,13 @@ class _MyAppState extends State<MyApp> {
                       MaterialPageRoute(builder: (context) => const Demo05()));
                 },
                 child: const Text('To Demo05-异步加载'),
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Demo06()));
+                },
+                child: const Text('To Demo06-静态资源'),
               ),
             ],
           ),

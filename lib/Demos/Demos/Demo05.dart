@@ -35,14 +35,11 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('异步加载'),
-        ),
-        body: ListView.builder(
-            itemCount: widgets.length,
-            itemBuilder: (context, position) {
-              return getRow(position);
-            }));
+      appBar: AppBar(
+        title: const Text('异步加载'),
+      ),
+      body: getBody(),
+    );
   }
 
   Widget getRow(int i) {
@@ -58,5 +55,26 @@ class _MyHomeState extends State<MyHome> {
     setState(() {
       widgets = jsonDecode(response.body);
     });
+  }
+
+  getBody() {
+    bool showLoadingDialog = widgets.isEmpty;
+    if (showLoadingDialog) {
+      return getProgressDialog();
+    } else {
+      return getListView();
+    }
+  }
+
+  getProgressDialog() {
+    return const Center(child: CircularProgressIndicator());
+  }
+
+  getListView() {
+    return ListView.builder(
+        itemCount: widgets.length,
+        itemBuilder: (context, position) {
+          return getRow(position);
+        });
   }
 }
