@@ -7,7 +7,10 @@ class Demo10 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Demo10 Form表单",
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+          primarySwatch: Colors.blue,
+          textSelectionTheme:
+              const TextSelectionThemeData(selectionColor: Colors.red)),
       home: const MyHome(),
     );
   }
