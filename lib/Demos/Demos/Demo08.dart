@@ -41,15 +41,15 @@ class _MyHomeState extends State<MyHome> {
               builder: (context) {
                 return Center(
                   child: Text(
-                    '点击的是第 ${i + 1} 个',
+                    '点击的是第 ${i} 个',
                     style:
                         const TextStyle(fontSize: 18, color: Colors.cyanAccent),
                   ),
                 );
               });
         },
-        child: Padding(
-            padding: const EdgeInsets.all(10), child: Text('第 ${i + 1} 个')),
+        child:
+            Padding(padding: const EdgeInsets.all(10), child: Text('第 ${i} 个')),
       ));
     }
     return widgets;

@@ -7,6 +7,8 @@ import 'package:flutter3_app/Demos/Demos/Demo05.dart';
 import 'package:flutter3_app/Demos/Demos/Demo06.dart';
 import 'package:flutter3_app/Demos/Demos/Demo07.dart';
 import 'package:flutter3_app/Demos/Demos/Demo08.dart';
+import 'package:flutter3_app/Demos/Demos/Demo09.dart';
+import 'package:flutter3_app/Demos/Demos/Demo10.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -93,6 +95,20 @@ class _MyAppState extends State<MyApp> {
                       MaterialPageRoute(builder: (context) => const Demo08()));
                 },
                 child: const Text('To Demo08-ListView'),
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Demo09()));
+                },
+                child: const Text('To Demo09-ListView.Builder'),
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Demo10()));
+                },
+                child: const Text('To Demo10-Form表单'),
               ),
             ],
           ),
