@@ -3,6 +3,7 @@ import 'package:flutter3_app/Demos/Demos/Demo01.dart';
 import 'package:flutter3_app/Demos/Demos/Demo02.dart';
 import 'package:flutter3_app/Demos/Demos/Demo03.dart';
 import 'package:flutter3_app/Demos/Demos/Demo04.dart';
+import 'package:flutter3_app/Demos/Demos/Demo05.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -61,7 +62,14 @@ class _MyAppState extends State<MyApp> {
                       MaterialPageRoute(builder: (context) => const Demo04()));
                 },
                 child: const Text('To Demo04-实现动画'),
-              )
+              ),
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Demo05()));
+                },
+                child: const Text('To Demo05-异步加载'),
+              ),
             ],
           ),
         ));
