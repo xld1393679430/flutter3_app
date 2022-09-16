@@ -30,12 +30,13 @@ class _MyHomeState extends State<MyHome> {
         title: const Text('静态资源加载'),
       ),
       body: Center(
-        child: Column(
-          children: [
-            const Text('哈哈'),
-            Image.asset('assets/images/shanghai.jpeg')
-          ],
-        ),
+        child: ListView(children: [
+          const Text('加载本地资源'),
+          Image.asset('assets/images/shanghai.jpeg'),
+          const Text('---------'),
+          const Text('加载网络资源'),
+          Image.network('https://docs.flutter.dev/assets/images/docs/owl.jpg')
+        ]),
       ),
     );
   }

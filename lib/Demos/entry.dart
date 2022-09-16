@@ -11,6 +11,8 @@ import 'package:flutter3_app/Demos/Demos/Demo09.dart';
 import 'package:flutter3_app/Demos/Demos/Demo10.dart';
 import 'package:flutter3_app/Demos/Demos/Demo11.dart';
 import 'package:flutter3_app/Demos/Demos/Demo12.dart';
+import 'package:flutter3_app/Demos/Demos/Demo13.dart';
+import 'package:flutter3_app/Demos/Demos/Demo14.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -125,6 +127,20 @@ class _MyAppState extends State<MyApp> {
                     MaterialPageRoute(builder: (context) => const Demo12()));
               },
               child: const Text('To Demo12-调用子组件'),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Demo13()));
+              },
+              child: const Text('To Demo13-布局'),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Demo14()));
+              },
+              child: const Text('To Demo14-Tab导航'),
             ),
           ],
         )));
