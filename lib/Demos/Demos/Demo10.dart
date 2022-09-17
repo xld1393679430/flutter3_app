@@ -5,14 +5,16 @@ class Demo10 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: "Demo10 Form表单",
-      theme: ThemeData(
-          primarySwatch: Colors.blue,
-          textSelectionTheme:
-              const TextSelectionThemeData(selectionColor: Colors.red)),
-      home: const MyHome(),
-    );
+    // return MaterialApp(
+    //   title: "Demo10 Form表单",
+    //   theme: ThemeData(
+    //       primarySwatch: Colors.blue,
+    //       textSelectionTheme:
+    //           const TextSelectionThemeData(selectionColor: Colors.red)),
+    //   home: const MyHome(),
+    // );
+
+    return const MyHome();
   }
 }
 
@@ -25,6 +27,7 @@ class MyHome extends StatefulWidget {
 
 class _MyHomeState extends State<MyHome> {
   String? _errorText;
+  final TextEditingController controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,19 +39,24 @@ class _MyHomeState extends State<MyHome> {
         child: Column(
           children: [
             TextField(
+                controller: controller,
                 onSubmitted: (text) {
-                  setState(() {
-                    if (text == '') {
-                      _errorText = null;
-                    } else if (!isEmail(text)) {
-                      _errorText = 'Error: This is not email';
-                    } else {
-                      _errorText = null;
-                    }
-                  });
+                  handleSubmit();
                 },
                 decoration: InputDecoration(
-                    hintText: 'THis is hint', errorText: _getErrorText()))
+                    labelText: 'Text Field',
+                    hintText: 'THis is hint',
+                    errorText: _getErrorText())),
+            ElevatedButton(
+                onPressed: () {
+                  handleSubmit();
+                },
+                child: const Text('Submit')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('返回上一页'))
           ],
         ),
       ),
@@ -67,5 +75,25 @@ class _MyHomeState extends State<MyHome> {
     RegExp regExp = RegExp(emailRegexp);
 
     return regExp.hasMatch(text);
+  }
+
+  void handleSubmit() {
+    setState(() {
+      if (controller.text == '') {
+        _errorText = null;
+      } else if (!isEmail(controller.text)) {
+        _errorText = 'Error: This is not email';
+      } else {
+        _errorText = null;
+      }
+    });
+
+    showDialog(
+        context: context,
+        builder: (context) {
+          return AlertDialog(
+              title: const Text('Alert'),
+              content: Text('你输入的是： ${controller.text}'));
+        });
   }
 }
