@@ -9,6 +9,7 @@ import 'package:flutter3_app/Demos/Demos/Demo07.dart';
 import 'package:flutter3_app/Demos/Demos/Demo08.dart';
 import 'package:flutter3_app/Demos/Demos/Demo09.dart';
 import 'package:flutter3_app/Demos/Demos/Demo10.dart';
+import 'package:flutter3_app/Demos/Demos/Demo10_2.dart';
 import 'package:flutter3_app/Demos/Demos/Demo11.dart';
 import 'package:flutter3_app/Demos/Demos/Demo12.dart';
 import 'package:flutter3_app/Demos/Demos/Demo13.dart';
@@ -115,6 +116,13 @@ class _MyAppState extends State<MyApp> {
                     MaterialPageRoute(builder: (context) => const Demo10()));
               },
               child: const Text('To Demo10-Form表单'),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Demo10_2()));
+              },
+              child: const Text('To Demo10_2-Form表单2'),
             ),
             OutlinedButton(
               onPressed: () {
