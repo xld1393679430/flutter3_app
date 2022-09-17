@@ -16,6 +16,7 @@ import 'package:flutter3_app/Demos/Demos/Demo13.dart';
 import 'package:flutter3_app/Demos/Demos/Demo14.dart';
 import 'package:flutter3_app/Demos/Demos/Demo15.dart';
 import 'package:flutter3_app/Demos/Demos/Demo16.dart';
+import 'package:flutter3_app/Demos/Demos/Demo17.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -165,6 +166,13 @@ class _MyAppState extends State<MyApp> {
                     MaterialPageRoute(builder: (context) => const Demo16()));
               },
               child: const Text('To Demo16-手势系统'),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Demo17()));
+              },
+              child: const Text('To Demo17-平台类型'),
             ),
           ],
         )));
