@@ -33,41 +33,47 @@ class _MyHomeState extends State<MyHome> {
           ),
           body: ListView(
             children: [
-              Container(
-                color: Colors.red,
-                width: 100,
-                height: 100,
-                child: const Text(
-                  '111',
-                  style: TextStyle(color: Colors.blue, fontSize: 20),
-                ),
-              ),
-              Container(
-                color: Colors.blue,
-                width: 100,
-                height: 100,
-              ),
-              Container(
+              Center(
+                child: Container(
                   color: Colors.red,
                   width: 100,
                   height: 100,
-                  child: Stack(
-                    alignment: const Alignment(-1, 0),
-                    children: [
-                      const CircleAvatar(
-                        backgroundImage: NetworkImage(
-                          'https://avatars3.githubusercontent.com/u/14101776?v=4',
+                  child: const Text(
+                    '111',
+                    style: TextStyle(color: Colors.blue, fontSize: 20),
+                  ),
+                ),
+              ),
+              Center(
+                child: Container(
+                  color: Colors.blue,
+                  width: 100,
+                  height: 100,
+                ),
+              ),
+              Center(
+                child: Container(
+                    color: Colors.red,
+                    width: 100,
+                    height: 100,
+                    child: Stack(
+                      alignment: const Alignment(-1, 0),
+                      children: [
+                        const CircleAvatar(
+                          backgroundImage: NetworkImage(
+                            'https://avatars3.githubusercontent.com/u/14101776?v=4',
+                          ),
                         ),
-                      ),
-                      Container(
-                        color: Colors.black45,
-                        child: const Text(
-                          'Flutter',
-                          style: TextStyle(fontSize: 12, color: Colors.red),
-                        ),
-                      )
-                    ],
-                  )),
+                        Container(
+                          color: Colors.black45,
+                          child: const Text(
+                            'Flutter',
+                            style: TextStyle(fontSize: 12, color: Colors.red),
+                          ),
+                        )
+                      ],
+                    )),
+              ),
             ],
           ),
         ));

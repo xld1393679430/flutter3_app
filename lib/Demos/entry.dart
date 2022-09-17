@@ -18,27 +18,27 @@ import 'package:flutter3_app/Demos/Demos/Demo15.dart';
 import 'package:flutter3_app/Demos/Demos/Demo16.dart';
 import 'package:flutter3_app/Demos/Demos/Demo17.dart';
 
-void main() {
-  runApp(const MaterialApp(
-    home: MyApp(),
-    // initialRoute: '/',
-    // routes: {
-    //   '/demo01': (context) => const Demo01(),
-    //   '/demo02': (context) => const Demo02(),
-    //   '/demo03': (context) => const Demo03(),
-    //   '/demo04': (context) => const Demo04(),
-    // },
-  ));
-}
+// void main() {
+//   runApp(const MaterialApp(
+//     home: Demos(),
+//     // initialRoute: '/',
+//     // routes: {
+//     //   '/demo01': (context) => const Demo01(),
+//     //   '/demo02': (context) => const Demo02(),
+//     //   '/demo03': (context) => const Demo03(),
+//     //   '/demo04': (context) => const Demo04(),
+//     // },
+//   ));
+// }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class Demos extends StatefulWidget {
+  const Demos({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<Demos> createState() => _DemosState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _DemosState extends State<Demos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
