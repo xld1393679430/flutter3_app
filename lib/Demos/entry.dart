@@ -13,6 +13,7 @@ import 'package:flutter3_app/Demos/Demos/Demo11.dart';
 import 'package:flutter3_app/Demos/Demos/Demo12.dart';
 import 'package:flutter3_app/Demos/Demos/Demo13.dart';
 import 'package:flutter3_app/Demos/Demos/Demo14.dart';
+import 'package:flutter3_app/Demos/Demos/Demo15.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -141,6 +142,13 @@ class _MyAppState extends State<MyApp> {
                     MaterialPageRoute(builder: (context) => const Demo14()));
               },
               child: const Text('To Demo14-Tab导航'),
+            ),
+            OutlinedButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Demo15()));
+              },
+              child: const Text('To Demo15-Drawer导航'),
             ),
           ],
         )));
