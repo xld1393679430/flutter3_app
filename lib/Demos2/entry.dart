@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Demos/Demos/Demo01.dart';
+import '../Demos2/Demos/Demo01.dart';
 
 class Demos2 extends StatefulWidget {
   const Demos2({Key? key}) : super(key: key);
@@ -24,7 +24,7 @@ class _Demos2State extends State<Demos2> {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const Demo01()));
               },
-              child: const Text('To Demo01- 累加器'),
+              child: const Text('To Demo01- 为页面切换加入动画效果'),
             ),
           ],
         )));

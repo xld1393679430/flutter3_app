@@ -7,7 +7,10 @@ class Demo01 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("默认文案"),
+        title: const Text(
+          "为页面切换加入动画效果",
+          style: TextStyle(fontSize: 16),
+        ),
       ),
       body: const SampleAppPage(),
     );

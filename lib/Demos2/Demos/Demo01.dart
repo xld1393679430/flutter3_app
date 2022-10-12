@@ -6,39 +6,44 @@ class Demo01 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("默认文案"),
+      appBar: AppBar(),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(_createRoute());
+          },
+          child: const Text('Go!'),
+        ),
       ),
-      body: const SampleAppPage(),
     );
   }
 }
 
-class SampleAppPage extends StatefulWidget {
-  const SampleAppPage({Key? key}) : super(key: key);
+Route<Object?> _createRoute() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => const Page2(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      const begin = Offset(0, 1);
+      const end = Offset.zero;
+      const curve = Curves.ease;
 
-  @override
-  State<SampleAppPage> createState() => _SampleAppPageState();
+      final tween = Tween(begin: begin, end: end);
+      final curvedAnimation = CurvedAnimation(parent: animation, curve: curve);
+      return SlideTransition(
+          position: tween.animate(curvedAnimation), child: child);
+    },
+  );
 }
 
-class _SampleAppPageState extends State<SampleAppPage> {
-  String textToShow = 'a';
-
-  void _updateText() {
-    textToShow += '1';
-  }
+class Page2 extends StatelessWidget {
+  const Page2({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(textToShow),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _updateText,
-        tooltip: 'Update Text',
-        child: const Icon(Icons.update),
-      ),
-    );
+        appBar: AppBar(),
+        body: const Center(
+          child: Text('Page2'),
+        ));
   }
 }
