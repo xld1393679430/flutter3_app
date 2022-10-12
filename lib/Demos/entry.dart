@@ -43,7 +43,7 @@ class _DemosState extends State<Demos> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Demo Entry"),
+          title: const Text("前置Demos"),
         ),
         body: Center(
             child: ListView(

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter3_app/Demos/entry.dart';
 
+import 'Demos/entry.dart';
+import 'Demos2/entry.dart';
+import 'Demos3/entry.dart';
 import 'Pages/Home.dart';
 
 void main() {
@@ -33,7 +35,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
-  late TabController controller = TabController(length: 2, vsync: this);
+  late TabController controller = TabController(length: 4, vsync: this);
 
   @override
   Widget build(BuildContext context) {
@@ -41,21 +43,20 @@ class _MyHomePageState extends State<MyHomePage>
       bottomNavigationBar: Material(
         color: Colors.blue,
         child: TabBar(
+          unselectedLabelStyle: const TextStyle(fontSize: 11),
+          labelStyle:
+              const TextStyle(fontSize: 11, color: Colors.lightBlueAccent),
           tabs: const [
             Tab(
               text: "首页",
-              icon: Icon(
-                Icons.home,
-                size: 22,
-              ),
             ),
             Tab(
-              text: "Demos",
-              icon: Icon(
-                Icons.exit_to_app,
-                size: 22,
-              ),
-            )
+              text: "简单案例",
+            ),
+            Tab(
+              text: "实用教程",
+            ),
+            Tab(text: "实践教程"),
           ],
           controller: controller,
         ),
@@ -65,6 +66,8 @@ class _MyHomePageState extends State<MyHomePage>
         children: const [
           Home(),
           Demos(),
+          Demos2(),
+          Demos3(),
         ],
       ),
     );
